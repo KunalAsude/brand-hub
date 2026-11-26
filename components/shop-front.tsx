@@ -88,7 +88,8 @@ function ReelCard({ product, onAdd }: { product: Product; onAdd: AddFn }) {
 export default function ShopFront() {
   const [compactHeader, setCompactHeader] = useState(false)
   useEffect(() => {
-    const updateHeader = () => setCompactHeader(window.scrollY > 24)
+    // Two thresholds: shrinking the header shifts the page ~16px, so a single cut-off makes it flicker.
+    const updateHeader = () => setCompactHeader(c => c ? window.scrollY > 8 : window.scrollY > 64)
     window.addEventListener('scroll', updateHeader, { passive: true })
     return () => window.removeEventListener('scroll', updateHeader)
   }, [])
