@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     type: 'website',
   },
-  icons: { icon: '/icon.svg', apple: '/apple-icon.png' },
+  icons: { icon: '/icon.png', apple: '/apple-icon.png' },
 }
 
 export const viewport: Viewport = { colorScheme: 'light', themeColor: '#efede8', width: 'device-width', initialScale: 1 }
